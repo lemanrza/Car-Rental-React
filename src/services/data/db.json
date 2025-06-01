@@ -1,0 +1,113 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "john123",
+      "role": "CLIENT",
+      "profileImage": "https://example.com/profiles/john.jpg",
+      "balance": 250,
+      "hostRequest": false,
+      "isBanned": false,
+      "createdAt": "2024-12-01T10:00:00Z",
+      "cars": [],
+      "wishlist": [
+        "c2"
+      ],
+      "rentals": [
+        "r1"
+      ]
+    },
+    {
+      "id": "u2",
+      "username": "admin_user",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "ADMIN",
+      "profileImage": "https://example.com/profiles/admin.jpg",
+      "balance": 1000,
+      "hostRequest": false,
+      "isBanned": false,
+      "createdAt": "2024-11-15T09:30:00Z",
+      "cars": [],
+      "wishlist": [],
+      "rentals": []
+    },
+    {
+      "id": "u3",
+      "username": "car_host",
+      "email": "host@example.com",
+      "password": "host123",
+      "role": "OWNER",
+      "profileImage": "https://example.com/profiles/host.jpg",
+      "balance": 500,
+      "hostRequest": true,
+      "isBanned": false,
+      "createdAt": "2024-10-20T08:00:00Z",
+      "cars": [
+        "c1"
+      ],
+      "wishlist": [],
+      "rentals": []
+    },
+    {
+      "id": "51e4",
+      "username": "l_rzali",
+      "email": "lamaner@code.edu.az",
+      "password": "Leman123",
+      "role": "CLIENT",
+      "profileImage": "",
+      "balance": 0,
+      "hostRequest": false,
+      "isBanned": false,
+      "createdAt": "2025-06-01T15:09:42.237Z"
+    }
+  ],
+  "cars": [
+    {
+      "id": "c1",
+      "model": "Model S",
+      "color": "Black",
+      "brand": "Tesla",
+      "coverImage": "https://example.com/cars/tesla_model_s.jpg",
+      "images": [
+        "https://example.com/cars/tesla_model_s1.jpg",
+        "https://example.com/cars/tesla_model_s2.jpg"
+      ],
+      "year": 2022,
+      "avgRating": 4.8,
+      "price": 120,
+      "category": "Electric",
+      "createdAt": "2024-10-25T11:00:00Z",
+      "description": "A high-performance electric sedan with cutting-edge features."
+    },
+    {
+      "id": "c2",
+      "model": "Civic",
+      "color": "White",
+      "brand": "Honda",
+      "coverImage": "https://example.com/cars/honda_civic.jpg",
+      "images": [
+        "https://example.com/cars/honda_civic1.jpg"
+      ],
+      "year": 2020,
+      "avgRating": 4.3,
+      "price": 140,
+      "category": "Sedan",
+      "createdAt": "2023-08-18T14:20:00Z",
+      "description": "Reliable and fuel-efficient compact car, perfect for city driving."
+    }
+  ],
+  "rentals": [
+    {
+      "id": "r1",
+      "userId": "u1",
+      "carId": "c1",
+      "startDate": "2025-06-10T09:00:00Z",
+      "endDate": "2025-06-12T18:00:00Z",
+      "totalPrice": 300,
+      "status": "CONFIRMED"
+    }
+  ]
+}
