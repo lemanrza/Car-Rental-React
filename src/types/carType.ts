@@ -21,3 +21,16 @@ export interface CarType {
     rentals?: Rental[];
     wishlistedBy?: User[]
 }
+
+export interface CreateCarDTO {
+    model: string;
+    brand: string;
+    color: string;
+    category: string;
+    year: number;
+    price: number;
+    description: string;
+    ownerId: string;
+    coverImage: string;
+    images: string[];
+}

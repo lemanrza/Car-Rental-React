@@ -49,7 +49,6 @@ const UserService = {
     },
 
     // update user password
-    // update user password
     updateUserPassword: async ({
         currentPassword,
         newPassword,

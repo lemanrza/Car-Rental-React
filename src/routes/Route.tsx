@@ -22,6 +22,11 @@ import ManageContacts from "@/pages/admin/ManageContacts";
 import NotFound from "@/pages/common/NotFound";
 import Unauthorized from "@/pages/common/Unauthorized";
 import Login from "@/pages/common/Login";
+import ProtectedRoute from "@/components/common/ProtectedRoute";
+import OwnerLayout from "@/layout/OwnerLayout";
+import OwnerDashBoard from "@/pages/owner/Dashboard";
+import OwnerCars from "@/pages/owner/OwnerCars";
+import OwnerRentals from "@/pages/owner/OwnerRentals";
 
 const ROUTES: RouteObject[] = [
     // client routes
@@ -34,8 +39,8 @@ const ROUTES: RouteObject[] = [
             { path: "cars/:id", element: <CarDetail /> },
             {
                 path: "user", element: (
-                    // <ProtectedRoute allowedRoles={["ADMIN", "HOST", "CLIENT"]}>
-                    <UserProfile />
+                    <ProtectedRoute allowedRoles={["ADMIN", "OWNER", "CLIENT"]}>
+                        <UserProfile />
                     // </ProtectedRoute>
                 )
             },
@@ -51,8 +56,8 @@ const ROUTES: RouteObject[] = [
     {
         path: "/admin",
         element: (
-            // <ProtectedRoute allowedRoles={["ADMIN"]}>
-            <AdminLayout />
+            <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <AdminLayout />
             // </ProtectedRoute>
         ),
         children: [
@@ -61,6 +66,22 @@ const ROUTES: RouteObject[] = [
             { path: "rentals", element: <ManageRentals /> },
             { path: "contacts", element: <ManageContacts /> },
             { path: "users", element: <ManageUsers /> },
+            { path: "*", element: <NotFound /> },
+        ],
+    },
+
+    // owner routes (protected)
+    {
+        path: "/owner",
+        element: (
+            <ProtectedRoute allowedRoles={["OWNER"]}>
+                <OwnerLayout />
+            </ProtectedRoute>
+        ),
+        children: [
+            { index: true, element: <OwnerDashBoard /> },
+            { path: "cars", element: <OwnerCars /> },
+            { path: "rentals", element: <OwnerRentals /> },
             { path: "*", element: <NotFound /> },
         ],
     },

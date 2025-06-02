@@ -1,4 +1,4 @@
-import type { CarType } from "@/types/carType";
+import type { CarType, CreateCarDTO } from "@/types/carType";
 import instance from "../axios-instance";
 import { endpoints } from "../constants";
 
@@ -16,12 +16,8 @@ const CarService = {
   },
 
   // POST 
-  create: async (carData: Omit<CarType, "id" | "createdAt">): Promise<CarType> => {
-    const newCar: Partial<CarType> = {
-      ...carData,
-      createdAt: new Date().toISOString(),
-    };
-    const response = await instance.post<CarType>(endpoints.cars, newCar);
+  create: async (carData: CreateCarDTO): Promise<CarType> => {
+    const response = await instance.post<CarType>(endpoints.cars, carData);
     return response.data;
   },
 

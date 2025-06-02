@@ -33,7 +33,7 @@
       "profileImage": "https://cdn-icons-png.flaticon.com/512/1144/1144760.png",
       "balance": 1010,
       "hostRequest": false,
-      "isBanned": false,
+      "isBanned": true,
       "createdAt": "2024-11-15T09:30:00Z",
       "cars": [
         "c1"
@@ -41,9 +41,7 @@
       "wishlist": [
         "c1"
       ],
-      "rentals": [
-        "c1"
-      ],
+      "rentals": [],
       "reviews": [
         "rev6"
       ]
@@ -60,7 +58,8 @@
       "isBanned": false,
       "createdAt": "2024-10-20T08:00:00Z",
       "cars": [
-        "c1"
+        "c1",
+        "c2"
       ],
       "wishlist": [],
       "rentals": [],
@@ -95,19 +94,54 @@
       "model": "Model 3",
       "color": "Red",
       "brand": "Tesla",
+      "category": "Electric",
+      "price": 75,
+      "year": 2023,
       "coverImage": "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
         "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/12218196/pexels-photo-12218196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2023,
-      "avgRating": 4.9,
-      "price": 75,
-      "category": "Electric",
-      "createdAt": "2023-01-15",
       "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
+      "createdAt": "2023-01-15T00:00:00Z",
+      "avgRating": 4.9,
+      "ownerId": "u2",
+      "owner": {
+        "id": "u2",
+        "username": "admin_user",
+        "email": "admin@example.com",
+        "profileImage": "https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+      },
       "reviews": [
-        "rev1"
+        {
+          "id": "rev1",
+          "userId": "u1",
+          "carId": "c1",
+          "rating": 5,
+          "comment": "Absolutely loved the Tesla! Smooth and futuristic ride.",
+          "createdAt": "2025-06-01T14:20:00Z"
+        }
+      ],
+      "rentals": [
+        {
+          "id": "r1",
+          "userId": "u1",
+          "carId": "c1",
+          "startDate": "2025-06-10T09:00:00Z",
+          "endDate": "2025-06-12T18:00:00Z",
+          "totalPrice": 300,
+          "status": "CONFIRMED"
+        }
+      ],
+      "wishlistedBy": [
+        {
+          "id": "u1",
+          "username": "john_doe"
+        },
+        {
+          "id": "u2",
+          "username": "admin_user"
+        }
       ]
     },
     {
@@ -115,102 +149,196 @@
       "model": "Civic",
       "color": "Blue",
       "brand": "Honda",
+      "category": "Sedan",
+      "price": 50,
+      "year": 2022,
       "coverImage": "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
         "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2022,
+      "description": "The reliable Honda Civic combines comfort, fuel efficiency, and modern technology in a stylish package.",
+      "createdAt": "2022-11-05T00:00:00Z",
       "avgRating": 4.7,
-      "price": 45,
-      "category": "Sedan",
-      "createdAt": "2022-11-05",
-      "description": "The reliable Honda Civic combines comfort, fuel efficiency, and modern technology in a stylish package. Perfect for city driving and long journeys.",
+      "ownerId": "u3",
+      "owner": {
+        "id": "u3",
+        "username": "car_host",
+        "email": "host@example.com",
+        "profileImage": "https://example.com/profiles/host.jpg"
+      },
       "reviews": [
-        "rev2",
-        "rev7"
-      ]
+        {
+          "id": "rev2",
+          "userId": "51e4",
+          "carId": "c2",
+          "rating": 4,
+          "comment": "Very economical and comfy for the price. Would use again.",
+          "createdAt": "2025-06-01T17:35:00Z"
+        },
+        {
+          "id": "rev7",
+          "userId": "u3",
+          "carId": "c2",
+          "rating": 2,
+          "comment": "Car was fine, but pickup process was slow and confusing.",
+          "createdAt": "2025-06-02T15:40:00Z"
+        }
+      ],
+      "rentals": [],
+      "wishlistedBy": []
     },
     {
       "id": "c3",
       "model": "Mustang GT",
       "color": "Yellow",
       "brand": "Ford",
+      "category": "Sports",
+      "price": 85,
+      "year": 2023,
       "coverImage": "https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
         "https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2023,
-      "avgRating": 4.8,
-      "price": 85,
-      "category": "Sports",
-      "createdAt": "2023-02-20",
       "description": "Feel the power of American muscle with the Ford Mustang GT. With its V8 engine and iconic design, it delivers an exhilarating driving experience.",
+      "createdAt": "2023-02-20T00:00:00Z",
+      "avgRating": 4.8,
+      "ownerId": "u3",
+      "owner": {
+        "id": "u3",
+        "username": "car_host",
+        "email": "host@example.com",
+        "profileImage": "https://example.com/profiles/host.jpg"
+      },
       "reviews": [
-        "rev3"
-      ]
+        {
+          "id": "rev3",
+          "userId": "u3",
+          "carId": "c3",
+          "rating": 5,
+          "comment": "That Mustang sound is unbeatable. Pure muscle car joy.",
+          "createdAt": "2025-06-02T10:12:00Z"
+        }
+      ],
+      "rentals": [],
+      "wishlistedBy": []
     },
     {
       "id": "c4",
       "model": "X5",
       "color": "Black",
       "brand": "BMW",
+      "category": "SUV",
+      "price": 95,
+      "year": 2022,
       "coverImage": "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
         "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2022,
-      "avgRating": 4.6,
-      "price": 95,
-      "category": "SUV",
-      "createdAt": "2022-10-12",
       "description": "Luxury meets performance in the BMW X5. This premium SUV offers a spacious interior, cutting-edge technology, and the renowned BMW driving dynamics.",
+      "createdAt": "2022-10-12T00:00:00Z",
+      "avgRating": 4.6,
+      "ownerId": "51e4",
+      "owner": {
+        "id": "51e4",
+        "username": "l_rzali",
+        "email": "lamaner@code.edu.az",
+        "profileImage": ""
+      },
       "reviews": [
-        "rev5"
-      ]
+        {
+          "id": "rev5",
+          "userId": "51e4",
+          "carId": "c4",
+          "rating": 4,
+          "comment": "Spacious and perfect for family road trips. Clean interior.",
+          "createdAt": "2025-06-02T13:00:00Z"
+        }
+      ],
+      "rentals": [],
+      "wishlistedBy": []
     },
     {
       "id": "c5",
       "model": "A-Class",
       "color": "Silver",
       "brand": "Mercedes-Benz",
+      "category": "Luxury",
+      "price": 80,
+      "year": 2023,
       "coverImage": "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
         "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/950902/pexels-photo-950902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2023,
-      "avgRating": 4.5,
-      "price": 80,
-      "category": "Luxury",
-      "createdAt": "2023-03-05",
       "description": "The Mercedes-Benz A-Class brings luxury to the compact segment with its elegant design, premium materials, and advanced MBUX infotainment system.",
+      "createdAt": "2023-03-05T00:00:00Z",
+      "avgRating": 4.5,
+      "ownerId": "u1",
+      "owner": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "profileImage": "https://example.com/profiles/john.jpg"
+      },
       "reviews": [
-        "rev4"
-      ]
+        {
+          "id": "rev4",
+          "userId": "u1",
+          "carId": "c5",
+          "rating": 3,
+          "comment": "Luxury feel, but the drive wasn’t as smooth as expected.",
+          "createdAt": "2025-06-02T11:45:00Z"
+        }
+      ],
+      "rentals": [],
+      "wishlistedBy": []
     },
     {
       "id": "c6",
       "model": "Prius",
       "color": "Green",
       "brand": "Toyota",
+      "category": "Hybrid",
+      "price": 55,
+      "year": 2022,
       "coverImage": "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
         "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2022,
-      "avgRating": 4.4,
-      "price": 55,
-      "category": "Hybrid",
-      "createdAt": "2022-09-18",
       "description": "The iconic Toyota Prius combines hybrid efficiency with practical design. Enjoy exceptional fuel economy and reduced emissions in this environmentally-friendly vehicle.",
+      "createdAt": "2022-09-18T00:00:00Z",
+      "avgRating": 4.4,
+      "ownerId": "u2",
+      "owner": {
+        "id": "u2",
+        "username": "admin_user",
+        "email": "admin@example.com",
+        "profileImage": "https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+      },
       "reviews": [
-        "rev6",
-        "rev8"
-      ]
+        {
+          "id": "rev6",
+          "userId": "u2",
+          "carId": "c6",
+          "rating": 5,
+          "comment": "Silent, smooth, and super fuel-efficient. Loved the Prius!",
+          "createdAt": "2025-06-02T14:22:00Z"
+        },
+        {
+          "id": "rev8",
+          "userId": "u1",
+          "carId": "c6",
+          "rating": 4,
+          "comment": "Eco-friendly and smart features impressed me.",
+          "createdAt": "2025-06-02T16:05:00Z"
+        }
+      ],
+      "rentals": [],
+      "wishlistedBy": []
     }
   ],
   "rentals": [
@@ -227,6 +355,7 @@
         "model": "Model 3",
         "color": "Red",
         "brand": "Tesla",
+        "category": "Electric",
         "coverImage": "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "images": [
           "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -235,8 +364,7 @@
         "year": 2023,
         "avgRating": 4.9,
         "price": 75,
-        "category": "Electric",
-        "createdAt": "2023-01-15",
+        "createdAt": "2023-01-15T00:00:00Z",
         "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
         "reviews": [
           "rev1"
@@ -246,25 +374,9 @@
         "id": "u1",
         "username": "john_doe",
         "email": "john@example.com",
-        "password": "john123",
         "role": "CLIENT",
         "profileImage": "https://example.com/profiles/john.jpg",
-        "balance": 250,
-        "hostRequest": false,
-        "isBanned": false,
-        "createdAt": "2024-12-01T10:00:00Z",
-        "cars": [],
-        "wishlist": [
-          "c2"
-        ],
-        "rentals": [
-          "r1"
-        ],
-        "reviews": [
-          "rev1",
-          "rev4",
-          "rev8"
-        ]
+        "balance": 250
       }
     }
   ],

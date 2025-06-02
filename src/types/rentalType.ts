@@ -1,5 +1,6 @@
 import type { User } from "./authType";
 import type { CarType } from "./carType";
+export type RentalStatus = 'PENDING' | 'CONFIRMED' | 'CANCELLED';
 
 export interface Rental {
   id: string;
