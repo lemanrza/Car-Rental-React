@@ -45,7 +45,6 @@ const EditCarForm: React.FC<Props> = ({ car, onCancel, onSuccess }) => {
     const [coverImageUrl, setCoverImageUrl] = useState<string | null>(car.coverImage);
     const [galleryImageUrls, setGalleryImageUrls] = useState<string[]>(car.images || []);
     const [error, setError] = useState<string | null>(null);
-    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const uploadImage = async (file: File): Promise<string> => {
         return URL.createObjectURL(file);
@@ -101,7 +100,6 @@ const EditCarForm: React.FC<Props> = ({ car, onCancel, onSuccess }) => {
             return;
         }
 
-        setIsSubmitting(true);
 
         try {
             const updatedCarData = {
@@ -123,7 +121,6 @@ const EditCarForm: React.FC<Props> = ({ car, onCancel, onSuccess }) => {
         } catch (err: any) {
             setError(err.message || "Something went wrong");
         } finally {
-            setIsSubmitting(false);
             setSubmitting(false);
         }
     };
@@ -147,7 +144,6 @@ const EditCarForm: React.FC<Props> = ({ car, onCancel, onSuccess }) => {
             >
                 {({ isSubmitting }) => (
                     <Form className="space-y-6">
-                        {/* Model */}
                         <div>
                             <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">
                                 Model
