@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && json-server --watch ./src/services/data/db.json -p 3000",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "json-server --watch ./src/services/data/db.json -p 3000 "
