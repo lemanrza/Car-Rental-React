@@ -1,33 +1,33 @@
-import type { Car } from "@/types/carType";
+import type { CarType } from "@/types/carType";
 import instance from "../axios-instance";
 import { endpoints } from "../constants";
 
 const CarService = {
   // GET all cars
-  getAll: async (): Promise<Car[]> => {
-    const response = await instance.get<Car[]>(endpoints.cars);
+  getAll: async (): Promise<CarType[]> => {
+    const response = await instance.get<CarType[]>(endpoints.cars);
     return response.data;
   },
 
   // GET car by ID
-  getById: async (id: string): Promise<Car> => {
-    const response = await instance.get<Car>(`${endpoints.cars}/${id}`);
+  getById: async (id: string): Promise<CarType> => {
+    const response = await instance.get<CarType>(`${endpoints.cars}/${id}`);
     return response.data;
   },
 
   // POST 
-  create: async (carData: Omit<Car, "id" | "createdAt">): Promise<Car> => {
-    const newCar: Partial<Car> = {
+  create: async (carData: Omit<CarType, "id" | "createdAt">): Promise<CarType> => {
+    const newCar: Partial<CarType> = {
       ...carData,
       createdAt: new Date().toISOString(),
     };
-    const response = await instance.post<Car>(endpoints.cars, newCar);
+    const response = await instance.post<CarType>(endpoints.cars, newCar);
     return response.data;
   },
 
   // PUT 
-  update: async (id: string, updatedCar: Car): Promise<Car> => {
-    const response = await instance.put<Car>(
+  update: async (id: string, updatedCar: CarType): Promise<CarType> => {
+    const response = await instance.put<CarType>(
       `${endpoints.cars}/${id}`,
       updatedCar
     );
@@ -37,9 +37,9 @@ const CarService = {
   // PATCH 
   partialUpdate: async (
     id: string,
-    updatedFields: Partial<Car>
-  ): Promise<Car> => {
-    const response = await instance.patch<Car>(
+    updatedFields: Partial<CarType>
+  ): Promise<CarType> => {
+    const response = await instance.patch<CarType>(
       `${endpoints.cars}/${id}`,
       updatedFields
     );

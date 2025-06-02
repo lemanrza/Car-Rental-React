@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Filter, Search } from "lucide-react";
 import { Range } from "react-range";
-import type { Car } from "@/types/carType";
+import type { CarType } from "@/types/carType";
 import CarService from "@/services/requests/CarService";
 import CarCard from "@/components/client/CarCard";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ const MIN = 0;
 const MAX = 500;
 
 const CarsSection: React.FC = () => {
-  const [cars, setCars] = useState<Car[]>([]);
+  const [cars, setCars] = useState<CarType[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [priceRange, setPriceRange] = useState([MIN, MAX]);

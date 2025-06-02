@@ -1,17 +1,17 @@
 import CarSlider from "@/components/client/CarSlider";
-import type { RootState } from "@/redux/store";
+// import type { RootState } from "@/redux/store";
 import CarService from "@/services/requests/CarService";
-import type { Car } from "@/types/carType";
+import type { CarType } from "@/types/carType";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+// import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 const CarDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [cars, setCars] = useState<Car[]>([])
-  const user = useSelector((state: RootState) => state.auth.user);
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  const [cars, setCars] = useState<CarType[]>([])
+  // const user = useSelector((state: RootState) => state.auth.user);
   useEffect(() => {
     const fetchCars = async () => {
       const data = await CarService.getAll()

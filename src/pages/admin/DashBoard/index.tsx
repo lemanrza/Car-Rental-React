@@ -104,7 +104,7 @@ const AdminDashBoard = () => {
         ? { role: "OWNER" as const, hostRequest: false }
         : { hostRequest: false };
 
-      await UserService.update(userId, updateData);
+      await UserService.partialUpdate(userId, updateData);
 
 
       const updatedUsers = await UserService.getAll();

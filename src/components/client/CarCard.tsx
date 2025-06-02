@@ -1,13 +1,13 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import type { Car } from '@/types/carType';
+import type { CarType } from '@/types/carType';
 import CategoryBadge from './CategoryBadge';
 import StarRating from './StarRating';
 import { Button } from '../ui/button';
 import { useNavigate } from 'react-router';
 
 interface CarCardProps {
-  car: Car;
+  car: CarType;
 }
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
