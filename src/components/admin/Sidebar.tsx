@@ -13,10 +13,12 @@ import {
 import { Link } from "react-router"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Separator } from "../ui/separator";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/redux/store";
 
 const items = [
   {
-    title: "Home",
+    title: "DashBoard",
     url: "/admin",
     icon: Home,
   },
@@ -41,12 +43,13 @@ const items = [
     icon: Users,
   },
 ]
-// const logOut = () => {
-//   localStorage.removeItem("user");
-//   window.location.href = "/";
-// }
+const logOut = () => {
+  localStorage.removeItem("user");
+  window.location.href = "/";
+}
 
 export function AppSidebar() {
+  const user = useSelector((state: RootState) => state.auth.user);
   return (
     <Sidebar>
       <SidebarContent>
@@ -72,13 +75,13 @@ export function AppSidebar() {
           <div className="flex mt-3 items-center gap-3">
             <Avatar className="w-13 h-12">
               <AvatarImage />
-              <AvatarFallback>RL</AvatarFallback>
+              <AvatarFallback>{user?.username.split("")[0].toUpperCase()}</AvatarFallback>
             </Avatar>
             <div className="flex w-35 flex-col">
-              <h4 className="text-lg font-semibold">@l_rzali</h4>
-              <p className="text-sm">lamaner@code.edu.az</p>
+              <h4 className="text-lg font-semibold">@{user?.username}</h4>
+              <p className="text-sm">{user?.email}</p>
             </div>
-            <LogOut  className="cursor-pointer hover:bg-gray-200 transition" size={20} />
+            <LogOut onClick={logOut} className="cursor-pointer hover:bg-gray-200 transition" size={20} />
           </div>
         </div>
 
