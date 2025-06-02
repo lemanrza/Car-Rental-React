@@ -52,4 +52,17 @@ const CarService = {
   },
 };
 
+// get wishlisted
+export async function toggleWishlist(
+  carId: string,
+  userId: string
+): Promise<{ message: string; wishlistedBy: { id: string }[] }> {
+  const response = await instance.patch(`${endpoints.cars}/${carId}`, {
+    toggleWishlist: true,
+    userId,
+  });
+  return response.data;
+}
+
+
 export default CarService;

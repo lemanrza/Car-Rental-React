@@ -1,15 +1,23 @@
+import type { User } from "./authType";
+import type { Rental } from "./rentalType";
+import type { Review } from "./reviewType";
+
 export interface CarType {
     id: string;
     model: string;
-    color: string;
     brand: string;
+    color: string;
+    category: string
+    price: number;
+    year: number;
     coverImage: string;
     images: string[];
-    year: number;
-    avgRating: number
-    price: boolean;
-    category: string;
-    createdAt: Date | string;
     description: string;
-    reviews: string[];
+    createdAt: string | Date;
+    avgRating: number;
+    ownerId: string;
+    owner?: User;
+    reviews?: Review[];
+    rentals?: Rental[];
+    wishlistedBy?: User[]
 }

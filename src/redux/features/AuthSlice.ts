@@ -35,6 +35,10 @@ const authSlice = createSlice({
                 localStorage.setItem('user', JSON.stringify(state.user));
             }
         },
+        setUser(state, action: PayloadAction<User>) {   
+            state.user = action.payload;
+            localStorage.setItem("user", JSON.stringify(action.payload));
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(registerUser.pending, (state) => {
@@ -77,6 +81,6 @@ const authSlice = createSlice({
     },
 });
 
-export const { logout, updateBalance } = authSlice.actions;
+export const { logout, updateBalance, setUser} = authSlice.actions;
 
 export default authSlice.reducer;

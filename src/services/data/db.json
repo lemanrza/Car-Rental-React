@@ -30,14 +30,20 @@
       "email": "admin@example.com",
       "password": "admin123",
       "role": "ADMIN",
-      "profileImage": "https://example.com/profiles/admin.jpg",
-      "balance": 1000,
+      "profileImage": "https://cdn-icons-png.flaticon.com/512/1144/1144760.png",
+      "balance": 1010,
       "hostRequest": false,
       "isBanned": false,
       "createdAt": "2024-11-15T09:30:00Z",
-      "cars": [],
-      "wishlist": [],
-      "rentals": [],
+      "cars": [
+        "c1"
+      ],
+      "wishlist": [
+        "c1"
+      ],
+      "rentals": [
+        "c1"
+      ],
       "reviews": [
         "rev6"
       ]
@@ -215,7 +221,51 @@
       "startDate": "2025-06-10T09:00:00Z",
       "endDate": "2025-06-12T18:00:00Z",
       "totalPrice": 300,
-      "status": "CONFIRMED"
+      "status": "CONFIRMED",
+      "car": {
+        "id": "c1",
+        "model": "Model 3",
+        "color": "Red",
+        "brand": "Tesla",
+        "coverImage": "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "images": [
+          "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://images.pexels.com/photos/12218196/pexels-photo-12218196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        ],
+        "year": 2023,
+        "avgRating": 4.9,
+        "price": 75,
+        "category": "Electric",
+        "createdAt": "2023-01-15",
+        "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
+        "reviews": [
+          "rev1"
+        ]
+      },
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://example.com/profiles/john.jpg",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "wishlist": [
+          "c2"
+        ],
+        "rentals": [
+          "r1"
+        ],
+        "reviews": [
+          "rev1",
+          "rev4",
+          "rev8"
+        ]
+      }
     }
   ],
   "reviews": [
