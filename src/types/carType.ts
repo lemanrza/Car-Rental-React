@@ -1,4 +1,4 @@
-export interface Car {
+export interface CarType {
     id: string;
     model: string;
     color: string;
@@ -11,4 +11,5 @@ export interface Car {
     category: string;
     createdAt: Date | string;
     description: string;
+    reviews: string[];
 }

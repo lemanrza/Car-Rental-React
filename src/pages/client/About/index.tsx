@@ -1,8 +1,16 @@
+import AboutHero from '@/components/client/CustomSlider';
+import CompanyStory from '@/components/client/OurJourney';
 
-const About = () => {
+const HomePage = () => {
+
   return (
-    <div>About</div>
-  )
-}
+    <>
+      <AboutHero />
+      <CompanyStory />
 
-export default About
+    </>
+
+  );
+};
+
+export default HomePage;

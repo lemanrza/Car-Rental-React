@@ -17,6 +17,7 @@ export interface User {
     cars?: Car[];
     wishlist?: Car[];
     rentals?: Rental[];
+    reviews: string[];
 }
 
 export interface AuthState {

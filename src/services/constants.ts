@@ -4,11 +4,13 @@ type endpoints = {
     users: string,
     contacts: string,
     rentals: string,
+    reviews: string
 }
 
 export const endpoints: endpoints = {
     cars: "/cars",
     users: "/users",
-    contacts: "/comtacts",
-    rentals: "/rentals"
+    contacts: "/contacts",
+    rentals: "/rentals",
+    reviews: "/reviews"
 }

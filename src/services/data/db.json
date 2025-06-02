@@ -17,6 +17,11 @@
       ],
       "rentals": [
         "r1"
+      ],
+      "reviews": [
+        "rev1",
+        "rev4",
+        "rev8"
       ]
     },
     {
@@ -32,7 +37,10 @@
       "createdAt": "2024-11-15T09:30:00Z",
       "cars": [],
       "wishlist": [],
-      "rentals": []
+      "rentals": [],
+      "reviews": [
+        "rev6"
+      ]
     },
     {
       "id": "u3",
@@ -49,7 +57,11 @@
         "c1"
       ],
       "wishlist": [],
-      "rentals": []
+      "rentals": [],
+      "reviews": [
+        "rev3",
+        "rev7"
+      ]
     },
     {
       "id": "51e4",
@@ -61,42 +73,138 @@
       "balance": 0,
       "hostRequest": false,
       "isBanned": false,
-      "createdAt": "2025-06-01T15:09:42.237Z"
+      "createdAt": "2025-06-01T15:09:42.237Z",
+      "cars": [],
+      "rentals": [],
+      "wishlist": [],
+      "reviews": [
+        "rev2",
+        "rev5"
+      ]
     }
   ],
   "cars": [
     {
       "id": "c1",
-      "model": "Model S",
-      "color": "Black",
+      "model": "Model 3",
+      "color": "Red",
       "brand": "Tesla",
-      "coverImage": "https://example.com/cars/tesla_model_s.jpg",
+      "coverImage": "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
-        "https://example.com/cars/tesla_model_s1.jpg",
-        "https://example.com/cars/tesla_model_s2.jpg"
+        "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/12218196/pexels-photo-12218196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2022,
-      "avgRating": 4.8,
-      "price": 120,
+      "year": 2023,
+      "avgRating": 4.9,
+      "price": 75,
       "category": "Electric",
-      "createdAt": "2024-10-25T11:00:00Z",
-      "description": "A high-performance electric sedan with cutting-edge features."
+      "createdAt": "2023-01-15",
+      "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
+      "reviews": [
+        "rev1"
+      ]
     },
     {
       "id": "c2",
       "model": "Civic",
-      "color": "White",
+      "color": "Blue",
       "brand": "Honda",
-      "coverImage": "https://example.com/cars/honda_civic.jpg",
+      "coverImage": "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "images": [
-        "https://example.com/cars/honda_civic1.jpg"
+        "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
-      "year": 2020,
-      "avgRating": 4.3,
-      "price": 140,
+      "year": 2022,
+      "avgRating": 4.7,
+      "price": 45,
       "category": "Sedan",
-      "createdAt": "2023-08-18T14:20:00Z",
-      "description": "Reliable and fuel-efficient compact car, perfect for city driving."
+      "createdAt": "2022-11-05",
+      "description": "The reliable Honda Civic combines comfort, fuel efficiency, and modern technology in a stylish package. Perfect for city driving and long journeys.",
+      "reviews": [
+        "rev2",
+        "rev7"
+      ]
+    },
+    {
+      "id": "c3",
+      "model": "Mustang GT",
+      "color": "Yellow",
+      "brand": "Ford",
+      "coverImage": "https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "year": 2023,
+      "avgRating": 4.8,
+      "price": 85,
+      "category": "Sports",
+      "createdAt": "2023-02-20",
+      "description": "Feel the power of American muscle with the Ford Mustang GT. With its V8 engine and iconic design, it delivers an exhilarating driving experience.",
+      "reviews": [
+        "rev3"
+      ]
+    },
+    {
+      "id": "c4",
+      "model": "X5",
+      "color": "Black",
+      "brand": "BMW",
+      "coverImage": "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "year": 2022,
+      "avgRating": 4.6,
+      "price": 95,
+      "category": "SUV",
+      "createdAt": "2022-10-12",
+      "description": "Luxury meets performance in the BMW X5. This premium SUV offers a spacious interior, cutting-edge technology, and the renowned BMW driving dynamics.",
+      "reviews": [
+        "rev5"
+      ]
+    },
+    {
+      "id": "c5",
+      "model": "A-Class",
+      "color": "Silver",
+      "brand": "Mercedes-Benz",
+      "coverImage": "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/950902/pexels-photo-950902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "year": 2023,
+      "avgRating": 4.5,
+      "price": 80,
+      "category": "Luxury",
+      "createdAt": "2023-03-05",
+      "description": "The Mercedes-Benz A-Class brings luxury to the compact segment with its elegant design, premium materials, and advanced MBUX infotainment system.",
+      "reviews": [
+        "rev4"
+      ]
+    },
+    {
+      "id": "c6",
+      "model": "Prius",
+      "color": "Green",
+      "brand": "Toyota",
+      "coverImage": "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "year": 2022,
+      "avgRating": 4.4,
+      "price": 55,
+      "category": "Hybrid",
+      "createdAt": "2022-09-18",
+      "description": "The iconic Toyota Prius combines hybrid efficiency with practical design. Enjoy exceptional fuel economy and reduced emissions in this environmentally-friendly vehicle.",
+      "reviews": [
+        "rev6",
+        "rev8"
+      ]
     }
   ],
   "rentals": [
@@ -108,6 +216,155 @@
       "endDate": "2025-06-12T18:00:00Z",
       "totalPrice": 300,
       "status": "CONFIRMED"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev1",
+      "userId": "u1",
+      "carId": "c1",
+      "rating": 5,
+      "comment": "Absolutely loved the Tesla! Smooth and futuristic ride.",
+      "createdAt": "2025-06-01T14:20:00Z"
+    },
+    {
+      "id": "rev2",
+      "userId": "51e4",
+      "carId": "c2",
+      "rating": 4,
+      "comment": "Very economical and comfy for the price. Would use again.",
+      "createdAt": "2025-06-01T17:35:00Z"
+    },
+    {
+      "id": "rev3",
+      "userId": "u3",
+      "carId": "c3",
+      "rating": 5,
+      "comment": "That Mustang sound is unbeatable. Pure muscle car joy.",
+      "createdAt": "2025-06-02T10:12:00Z"
+    },
+    {
+      "id": "rev4",
+      "userId": "u1",
+      "carId": "c5",
+      "rating": 3,
+      "comment": "Luxury feel, but the drive wasn’t as smooth as expected.",
+      "createdAt": "2025-06-02T11:45:00Z"
+    },
+    {
+      "id": "rev5",
+      "userId": "51e4",
+      "carId": "c4",
+      "rating": 4,
+      "comment": "Spacious and perfect for family road trips. Clean interior.",
+      "createdAt": "2025-06-02T13:00:00Z"
+    },
+    {
+      "id": "rev6",
+      "userId": "u2",
+      "carId": "c6",
+      "rating": 5,
+      "comment": "Silent, smooth, and super fuel-efficient. Loved the Prius!",
+      "createdAt": "2025-06-02T14:22:00Z"
+    },
+    {
+      "id": "rev7",
+      "userId": "u3",
+      "carId": "c2",
+      "rating": 2,
+      "comment": "Car was fine, but pickup process was slow and confusing.",
+      "createdAt": "2025-06-02T15:40:00Z"
+    },
+    {
+      "id": "rev8",
+      "userId": "u1",
+      "carId": "c6",
+      "rating": 4,
+      "comment": "Eco-friendly and smart features impressed me.",
+      "createdAt": "2025-06-02T16:05:00Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "con1",
+      "fullName": "John Doe",
+      "email": "john.doe@example.com",
+      "subject": "Issue with car rental",
+      "message": "I had a problem picking up the vehicle on time. Please assist.",
+      "isRead": false,
+      "submittedAt": "2025-06-01T10:30:00Z"
+    },
+    {
+      "id": "con2",
+      "fullName": "Aylin Karimova",
+      "email": "aylin.k@example.com",
+      "subject": "Payment not reflecting",
+      "message": "I made a payment yesterday, but it's not showing in my balance.",
+      "isRead": true,
+      "submittedAt": "2025-06-01T09:15:00Z"
+    },
+    {
+      "id": "con3",
+      "fullName": "David Smith",
+      "email": "david.smith@example.com",
+      "subject": "Account locked",
+      "message": "I can't log in to my account. It says I'm banned.",
+      "isRead": false,
+      "submittedAt": "2025-06-02T14:47:00Z"
+    },
+    {
+      "id": "con4",
+      "fullName": "Leyla Abbasova",
+      "email": "leyla.abbasova@example.com",
+      "subject": "Question about car categories",
+      "message": "What’s the difference between electric and hybrid cars on your site?",
+      "isRead": true,
+      "submittedAt": "2025-05-30T16:00:00Z"
+    },
+    {
+      "id": "con5",
+      "fullName": "Carlos Mendes",
+      "email": "carlos.mendes@example.com",
+      "subject": "Requesting invoice",
+      "message": "Can you send me an invoice for my last rental?",
+      "isRead": false,
+      "submittedAt": "2025-06-02T08:22:00Z"
+    },
+    {
+      "id": "con6",
+      "fullName": "Fatima Aliyeva",
+      "email": "fatima.aliyeva@example.com",
+      "subject": "Suggestion",
+      "message": "It would be great to filter cars by transmission type.",
+      "isRead": true,
+      "submittedAt": "2025-05-29T11:45:00Z"
+    },
+    {
+      "id": "con7",
+      "fullName": "Robert Jones",
+      "email": "r.jones@example.com",
+      "subject": "Cancel booking",
+      "message": "I need to cancel my upcoming booking due to an emergency.",
+      "isRead": false,
+      "submittedAt": "2025-06-01T18:10:00Z"
+    },
+    {
+      "id": "con8",
+      "fullName": "Narmin Gasimova",
+      "email": "narmin.g@example.com",
+      "subject": "Bug in wishlist feature",
+      "message": "When I add a car to the wishlist, it disappears after refresh.",
+      "isRead": false,
+      "submittedAt": "2025-06-02T12:05:00Z"
+    },
+    {
+      "id": "7de1",
+      "fullName": "Merrill Wilcox",
+      "email": "hyqusa@mailinator.com",
+      "subject": "Laborum Vitae quasi",
+      "message": "Culpa vitae sit asp",
+      "isRead": false,
+      "submittedAt": "2025-06-02T11:12:34.672Z"
     }
   ]
 }
