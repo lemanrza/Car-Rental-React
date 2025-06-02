@@ -61,7 +61,6 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Theme + Auth */}
           <div className="hidden md:flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -119,7 +118,7 @@ const Header = () => {
                     <span className="text-sm">{user.email}</span>
                   </div>
                   <Separator className="mt-3" />
-                  {(user.role === "ADMIN" || user.role === "HOST") && (
+                  {(user.role === "ADMIN" || user.role === "OWNER") && (
                     <DropdownMenuItem asChild>
                       <Link to={`/${user.role.toLowerCase()}`}>
                         {user.role} Dashboard
@@ -141,7 +140,6 @@ const Header = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             className="md:hidden text-gray-700 dark:text-gray-200 hover:text-indigo-800 dark:hover:text-white focus:outline-none transition"
@@ -158,7 +156,6 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
         <div
           className={`md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full left-0 transition-all duration-300 ${mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
             }`}

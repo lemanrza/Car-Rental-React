@@ -1,4 +1,4 @@
-import type { Car } from "./carType";
+import type { CarType } from "./carType";
 import type { Rental } from "./rentalType";
 
 
@@ -14,8 +14,8 @@ export interface User {
     isBanned: boolean;
     banDate?: Date | string;
     createdAt: Date | string;
-    cars?: Car[];
-    wishlist?: Car[];
+    cars?: CarType[];
+    wishlist?: CarType[];
     rentals?: Rental[];
     reviews: string[];
 }

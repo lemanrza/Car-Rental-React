@@ -1,5 +1,5 @@
 import type { User } from "./authType";
-import type { Car } from "./carType";
+import type { CarType } from "./carType";
 
 export interface Rental {
   id: string;
@@ -10,5 +10,5 @@ export interface Rental {
   totalPrice: number;
   status: 'PENDING' | 'CONFIRMED' | 'CANCELLED';
   user?: User;            
-  car?: Car;             
+  car?: CarType;             
 }
