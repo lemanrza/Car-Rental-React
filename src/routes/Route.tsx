@@ -16,6 +16,7 @@ import AdminDashboard from "@/pages/admin/DashBoard";
 import ManageCars from "@/pages/admin/ManageCars";
 import ManageRentals from "@/pages/admin/ManageRentals";
 import ManageUsers from "@/pages/admin/ManageUsers";
+import ManageContacts from "@/pages/admin/ManageContacts";
 
 // common pages
 import NotFound from "@/pages/common/NotFound";
@@ -58,7 +59,7 @@ const ROUTES: RouteObject[] = [
             { index: true, element: <AdminDashboard /> },
             { path: "cars", element: <ManageCars /> },
             { path: "rentals", element: <ManageRentals /> },
-            // { path: "contacts", element: <AdminContacts /> },
+            { path: "contacts", element: <ManageContacts /> },
             { path: "users", element: <ManageUsers /> },
             { path: "*", element: <NotFound /> },
         ],

@@ -341,7 +341,7 @@
       "email": "john.doe@example.com",
       "subject": "Issue with car rental",
       "message": "I had a problem picking up the vehicle on time. Please assist.",
-      "isRead": false,
+      "isRead": true,
       "submittedAt": "2025-06-01T10:30:00Z"
     },
     {
