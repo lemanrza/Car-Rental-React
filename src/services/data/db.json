@@ -367,23 +367,6 @@
         }
       ],
       "rentals": []
-    },
-    {
-      "id": "491359d6-0e71-4d09-a130-cef355ab1908",
-      "model": "Soluta vel adipisici",
-      "brand": "Cillum fuga Accusam",
-      "color": "Minima illum sunt d",
-      "category": "Luxury",
-      "year": 1973,
-      "price": 191,
-      "description": "Et enim quidem possi",
-      "createdAt": "2025-06-03T04:51:51.767Z",
-      "ownerId": "u3",
-      "coverImage": "blob:http://localhost:5173/fe65035c-8ffc-48b5-a311-f4a5dc39e2f5",
-      "images": [
-        "blob:http://localhost:5173/bfd1bd94-fcb8-4583-bc91-7fb29613afb3"
-      ],
-      "avgRating": 0
     }
   ],
   "rentals": [
@@ -492,7 +475,7 @@
     {
       "id": "c6a0",
       "userId": "51e4",
-      "carId": "491359d6-0e71-4d09-a130-cef355ab1908",
+      "carId": null,
       "startDate": "2025-06-03T04:52:22.394Z",
       "endDate": "2025-06-04T04:52:22.394Z",
       "totalPrice": 191,

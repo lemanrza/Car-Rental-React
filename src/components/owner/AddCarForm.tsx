@@ -46,12 +46,6 @@ const AddCarForm = ({ onCancel, onSuccess }: Props) => {
     const [galleryImageUrls, setGalleryImageUrls] = useState<string[]>([]);
     const [error, setError] = useState<string | null>(null);
 
-    // Dummy placeholder functions to replace your existing image upload handlers
-    const handleCoverImageUpload = (file: File | null) => {
-        // Upload file and get URL; here, just simulate
-        if (file) setCoverImageUrl(URL.createObjectURL(file));
-        else setCoverImageUrl(null);
-    };
 
     const handleGalleryImageUpload = (files: FileList | null) => {
         if (!files) return;
@@ -62,7 +56,7 @@ const AddCarForm = ({ onCancel, onSuccess }: Props) => {
         setGalleryImageUrls(urls);
     };
 
-    const toAbsoluteURL = (url: string) => url; 
+    const toAbsoluteURL = (url: string) => url;
 
     const handleSubmit = async (
         values: Partial<Omit<CarType, "id" | "ownerId" | "coverImage" | "images" | "avgRating" | "createdAt" | "owner" | "reviews" | "rentals" | "wishlistedBy">>,
@@ -236,22 +230,31 @@ const AddCarForm = ({ onCancel, onSuccess }: Props) => {
                         </div>
 
                         <div>
-                            <p className="font-semibold text-gray-800 mb-2">Cover Image (1 image)</p>
+                            <label htmlFor="coverImageUrl" className="block font-medium mb-1">
+                                Cover Image URL
+                            </label>
                             <input
-                                type="file"
-                                accept="image/*"
-                                onChange={(e) => handleCoverImageUpload(e.target.files?.[0] || null)}
-                                className="block w-full text-gray-700"
+                                type="text"
+                                id="coverImageUrl"
+                                value={coverImageUrl ?? ""}
+                                onChange={(e) => setCoverImageUrl(e.target.value)}
+                                placeholder="Paste image URL here"
+                                className="w-full p-2 border border-gray-300 rounded-md"
                             />
                             {coverImageUrl && (
                                 <img
-                                    src={toAbsoluteURL(coverImageUrl)}
-                                    alt="Cover"
+                                    src={coverImageUrl}
+                                    alt="Cover preview"
                                     className="w-32 h-32 object-cover mt-3 rounded-md shadow-sm"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).style.display = "none";
+                                    }}
+                                    onLoad={(e) => {
+                                        (e.target as HTMLImageElement).style.display = "block";
+                                    }}
                                 />
                             )}
                         </div>
-
                         <div>
                             <p className="font-semibold text-gray-800 mb-2">Gallery Images (Multiple)</p>
                             <input
