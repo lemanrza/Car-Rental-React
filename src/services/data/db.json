@@ -66,11 +66,9 @@
       "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
       "balance": 1010,
       "hostRequest": false,
-      "isBanned": true,
+      "isBanned": false,
       "createdAt": "2024-11-15T09:30:00Z",
-      "cars": [
-        "c1"
-      ],
+      "cars": [],
       "rentals": [],
       "reviews": [
         "rev6"
@@ -89,7 +87,11 @@
       "createdAt": "2024-10-20T08:00:00Z",
       "cars": [
         "c1",
-        "c2"
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
       ],
       "rentals": [],
       "reviews": [
@@ -106,7 +108,7 @@
       "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
       "balance": 1000,
       "hostRequest": false,
-      "isBanned": false,
+      "isBanned": true,
       "createdAt": "2025-06-01T15:09:42.237Z",
       "cars": [],
       "rentals": [],
@@ -114,6 +116,19 @@
         "rev2",
         "rev5"
       ]
+    },
+    {
+      "id": "287e",
+      "username": "fatime_hedisova",
+      "email": "fatime@gmail.com",
+      "password": "fatime123",
+      "role": "CLIENT",
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+      "balance": 0,
+      "hostRequest": false,
+      "isBanned": false,
+      "createdAt": "2025-06-03T04:05:56.431Z",
+      "rentals": []
     }
   ],
   "cars": [
@@ -125,15 +140,15 @@
       "category": "Electric",
       "price": 75,
       "year": 2023,
-      "coverImage": "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "coverImage": "https://unpluggedperformance.com/wp-content/uploads/2024/07/Ultra-Red-Tesla-Model-3-Performance-19-inch-Gloss-Black-UP-03-forged-wheels-by-Unplugged-Performance-image-22.jpg",
       "images": [
-        "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/12218196/pexels-photo-12218196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://media.streets.mn/wp-content/uploads/2019/06/model_3_red.jpg",
+        "https://images.carexpert.com.au/resize/3000/-/app/uploads/2023/11/2024-Tesla-Model-3-REVIEW-00F4A9882.jpg"
       ],
       "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
       "createdAt": "2023-01-15T00:00:00Z",
       "avgRating": 5,
-      "ownerId": "u2",
+      "ownerId": "u3",
       "owner": {
         "id": "u2",
         "username": "admin_user",
@@ -170,10 +185,10 @@
       "category": "Sedan",
       "price": 50,
       "year": 2022,
-      "coverImage": "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "coverImage": "https://d.newsweek.com/en/full/2396745/2025-honda-civic-hybrid.jpg?w=1600&h=1600&q=88&f=d6a1b472b01f59e19cc101bdaf417baf",
       "images": [
-        "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://www.carpro.com/hubfs/car-review-blog/review_201024_1.jpg",
+        "https://i.ytimg.com/vi/yvy0Qf86xJE/maxresdefault.jpg"
       ],
       "description": "The reliable Honda Civic combines comfort, fuel efficiency, and modern technology in a stylish package.",
       "createdAt": "2022-11-05T00:00:00Z",
@@ -213,10 +228,10 @@
       "category": "Sports",
       "price": 85,
       "year": 2023,
-      "coverImage": "https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "coverImage": "https://autoimage.capitalone.com/cms/Auto/assets/images/2681-hero-2024-ford-mustang-yellow-front-quarter.jpg",
       "images": [
-        "https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://www.instant-quote.co/images/cars/large/o_1f653sp0s1dmf1h7o6v21ko4htp15.jpg",
+        "https://autoimage.capitalone.com/cms/Auto/assets/images/2681-inset01-2024-ford-mustang-yellow-rear-quarter.jpg"
       ],
       "description": "Feel the power of American muscle with the Ford Mustang GT. With its V8 engine and iconic design, it delivers an exhilarating driving experience.",
       "createdAt": "2023-02-20T00:00:00Z",
@@ -248,10 +263,10 @@
       "category": "SUV",
       "price": 95,
       "year": 2022,
-      "coverImage": "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "coverImage": "https://cdn.bmwblog.com/wp-content/uploads/2023/08/2024-bmw-x5m-frozen-black-54.jpg",
       "images": [
-        "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://automaxgroup.me/wp-content/uploads/2023/07/2024-BMW-X5-XDRIVE-40I-Black-Sapphire_Page3.jpg",
+        "https://images.pexels.com/photos/19909381/pexels-photo-19909381/free-photo-of-black-bmw-x5.jpeg"
       ],
       "description": "Luxury meets performance in the BMW X5. This premium SUV offers a spacious interior, cutting-edge technology, and the renowned BMW driving dynamics.",
       "createdAt": "2022-10-12T00:00:00Z",
@@ -283,10 +298,10 @@
       "category": "Luxury",
       "price": 80,
       "year": 2023,
-      "coverImage": "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "coverImage": "https://images.prismic.io/carwow/1ac3ab58-1917-4aac-bd96-38c5b1120cfe_2023+Mercedes+E-Class+front+quarter+driving+2.jpg",
       "images": [
-        "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/950902/pexels-photo-950902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://autonxt.net/wp-content/uploads/2020/04/2020-Mercedes-Benz-A220-9.jpg",
+        "https://parkers-images.bauersecure.com/wp-images/22257/cut-out/1200x800/mercedes-c-class.jpg?mode=max&quality=90&scale=down"
       ],
       "description": "The Mercedes-Benz A-Class brings luxury to the compact segment with its elegant design, premium materials, and advanced MBUX infotainment system.",
       "createdAt": "2023-03-05T00:00:00Z",
@@ -318,10 +333,10 @@
       "category": "Hybrid",
       "price": 55,
       "year": 2022,
-      "coverImage": "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "coverImage": "https://hips.hearstapps.com/autoweek/assets/s3fs-public/2016_toyota_prius_three_07_e2f91721faedf16b9cfbbc882af673298b97d1bc.jpg",
       "images": [
-        "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://images.hgmsites.net/med/2012-toyota-prius-plug-in_100363823_m.jpg",
+        "https://images.dealersync.com/2201/Photos/852602/20220702035813380_20220701_133249.jpg?_=96e93161478f9bac71f36c41fda7a58d9c61800e"
       ],
       "description": "The iconic Toyota Prius combines hybrid efficiency with practical design. Enjoy exceptional fuel economy and reduced emissions in this environmentally-friendly vehicle.",
       "createdAt": "2022-09-18T00:00:00Z",
@@ -352,6 +367,23 @@
         }
       ],
       "rentals": []
+    },
+    {
+      "id": "491359d6-0e71-4d09-a130-cef355ab1908",
+      "model": "Soluta vel adipisici",
+      "brand": "Cillum fuga Accusam",
+      "color": "Minima illum sunt d",
+      "category": "Luxury",
+      "year": 1973,
+      "price": 191,
+      "description": "Et enim quidem possi",
+      "createdAt": "2025-06-03T04:51:51.767Z",
+      "ownerId": "u3",
+      "coverImage": "blob:http://localhost:5173/fe65035c-8ffc-48b5-a311-f4a5dc39e2f5",
+      "images": [
+        "blob:http://localhost:5173/bfd1bd94-fcb8-4583-bc91-7fb29613afb3"
+      ],
+      "avgRating": 0
     }
   ],
   "rentals": [
@@ -455,6 +487,15 @@
       "startDate": "2025-06-03T03:48:30.926Z",
       "endDate": "2025-06-05T03:48:30.926Z",
       "totalPrice": 110,
+      "status": "PENDING"
+    },
+    {
+      "id": "c6a0",
+      "userId": "51e4",
+      "carId": "491359d6-0e71-4d09-a130-cef355ab1908",
+      "startDate": "2025-06-03T04:52:22.394Z",
+      "endDate": "2025-06-04T04:52:22.394Z",
+      "totalPrice": 191,
       "status": "PENDING"
     }
   ],
@@ -735,6 +776,31 @@
       "rating": 5,
       "comment": "besttt",
       "createdAt": "2025-06-03T02:11:05.094Z"
+    },
+    {
+      "id": "48f2",
+      "user": {
+        "id": "u2",
+        "username": "admin_user",
+        "email": "admin@example.com",
+        "password": "admin123",
+        "role": "ADMIN",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 1010,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-11-15T09:30:00Z",
+        "cars": [],
+        "rentals": [],
+        "reviews": [
+          "rev6"
+        ]
+      },
+      "userId": "u2",
+      "carId": "c1",
+      "rating": 2,
+      "comment": "it's a little bit uncomfortable",
+      "createdAt": "2025-06-03T05:23:40.920Z"
     }
   ],
   "contacts": [

@@ -31,7 +31,7 @@ const CarsSection: React.FC = () => {
     };
     fetchCars();
   }, []);
-
+console.log(cars)
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const categoryFromUrl = queryParams.get("category");
@@ -57,7 +57,8 @@ const CarsSection: React.FC = () => {
       ? car.category.toLowerCase() === selectedCategory.toLowerCase()
       : true;
 
-    const matchesSearch = car.model.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = car.model.toLowerCase().trim().includes(searchTerm.toLowerCase().trim()) ||
+      car.brand.toLocaleLowerCase().trim().includes(searchTerm.toLowerCase().trim());
 
     const matchesPrice =
       typeof car.price === "number"
@@ -66,7 +67,6 @@ const CarsSection: React.FC = () => {
 
     return matchesCategory && matchesSearch && matchesPrice;
   });
-
   return (
     <div className="py-12 px-4 md:px-8 max-w-7xl mt-15 mx-auto">
       <div className="mb-8">
@@ -93,8 +93,8 @@ const CarsSection: React.FC = () => {
 
             <button
               className={`px-3 py-1 text-sm rounded-full transition-colors duration-200 ${selectedCategory === null
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               onClick={() => handleCategoryChange(null)}
             >
@@ -105,8 +105,8 @@ const CarsSection: React.FC = () => {
               <button
                 key={category}
                 className={`px-3 py-1 text-sm rounded-full transition-colors duration-200 ${selectedCategory?.toLowerCase() === category.toLowerCase()
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 onClick={() => handleCategoryChange(category)}
               >

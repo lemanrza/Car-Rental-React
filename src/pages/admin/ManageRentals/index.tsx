@@ -18,7 +18,6 @@ import RentalService from "@/services/requests/RentalService";
 const ManageRentals = () => {
   const [rentals, setRentals] = useState<Rental[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchRentals= async () => {
@@ -35,35 +34,21 @@ const ManageRentals = () => {
     fetchRentals();
   }, []);
 
-
-  const filteredRentals = rentals.filter(
-    (b) =>
-      b.car?.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      b.user?.username?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      b.car?.model?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
     <div className="flex-1 p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
           Manage Rentals
         </h1>
-        <Input
-          type="search"
-          placeholder="Search by apartment or user..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="max-w-xs"
-        />
+        
       </div>
 
       <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Cars</TableHead>
-              <TableHead>User</TableHead>
+              <TableHead className="text-center">CarId</TableHead>
+              <TableHead>UserId</TableHead>
               <TableHead>Start Date</TableHead>
               <TableHead>End Date</TableHead>
               <TableHead>Status</TableHead>
@@ -78,20 +63,20 @@ const ManageRentals = () => {
                   Loading bookings...
                 </TableCell>
               </TableRow>
-            ) : filteredRentals.length === 0 ? (
+            ) : rentals.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={7} className="text-center py-8 text-gray-500">
                   No rentals found
                 </TableCell>
               </TableRow>
             ) : (
-              filteredRentals.map((rental) => (
+              rentals.map((rental) => (
                 <TableRow
                   key={rental.id}
                   className="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
-                  <TableCell className="font-medium">{rental.car?.brand}</TableCell>
-                  <TableCell>{rental.user?.username}</TableCell>
+                  <TableCell className="font-medium lin-clamp-1 max-w-[150px]  text-center">{rental.carId}</TableCell>
+                  <TableCell>{rental.userId}</TableCell>
                   <TableCell>{new Date(rental.startDate).toLocaleDateString()}</TableCell>
                   <TableCell>{new Date(rental.endDate).toLocaleDateString()}</TableCell>
                   <TableCell className="rounded px-2 py-1 dark:bg-gray-800 dark:text-white" >

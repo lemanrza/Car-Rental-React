@@ -49,7 +49,7 @@ const authSlice = createSlice({
             state.loading = false;
             const userWithImage = {
                 ...action.payload,
-                profileImage: action.payload.profileImage || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+                profileImage: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
             };
             state.user = userWithImage;
             state.isLoggedIn = true;
@@ -67,13 +67,27 @@ const authSlice = createSlice({
         });
         builder.addCase(loginUser.fulfilled, (state, action: PayloadAction<User>) => {
             console.log("User payload on login:", action.payload);
+
+            if (action.payload.isBanned) {
+                state.loading = false;
+                state.error = "Your account has been banned.";
+                state.user = null;
+                state.isLoggedIn = false;
+                localStorage.removeItem("user");
+                return; 
+            }
+
             state.user = {
                 ...action.payload,
-                profileImage: action.payload.profileImage || "https://default.image.png",
+                profileImage: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
             };
             state.isLoggedIn = true;
+            state.loading = false;
+            state.error = null;
             localStorage.setItem("user", JSON.stringify(state.user));
         });
+
+
         builder.addCase(loginUser.rejected, (state, action) => {
             state.loading = false;
             state.error = action.payload || 'Login failed';

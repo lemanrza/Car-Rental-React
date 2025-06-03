@@ -186,7 +186,7 @@ const HostApartments = () => {
               ) : (
                 <TableRow>
                   <TableCell colSpan={11} className="text-center py-8 text-gray-500">
-                    No Apartments Found
+                    No Cars Found
                   </TableCell>
                 </TableRow>
               )}

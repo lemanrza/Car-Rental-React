@@ -22,14 +22,15 @@ const statusColors: Record<RentalStatus, string> = {
   CANCELLED: "bg-red-300 text-red-900",
 };
 const HostBookings = () => {
-  const userID = useSelector((state: RootState) => state.auth.user?.id);
+  const user = useSelector((state: RootState) => state.auth.user);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [rentals, setRentals] = useState<Rental[]>([])
 
+
   useEffect(() => {
     const fetchRentals = async () => {
-      if (!userID) return;
+      if (!user?.id) return;
       setLoading(true);
 
       try {
@@ -43,7 +44,9 @@ const HostBookings = () => {
     };
     fetchRentals()
   }, []);
-  const ownerRentals = rentals.filter((rental) => rental.userId && rental.userId === userID)
+  const ownerRentals = rentals.filter((rental) =>
+    user?.cars?.map((car) => car.id).includes(rental.carId)
+  );
 
 
   const handleStatusChange = async (id: string, newStatus: RentalStatus) => {

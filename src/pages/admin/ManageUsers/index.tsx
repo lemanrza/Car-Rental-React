@@ -104,7 +104,7 @@ const ManageUsers = () => {
               <TableHead className="whitespace-nowrap px-3 py-2 text-sm text-center hidden md:table-cell">Balance</TableHead>
               <TableHead className="whitespace-nowrap px-3 py-2 text-sm hidden sm:table-cell">Created At</TableHead>
               <TableHead className="whitespace-nowrap px-3 py-2 text-sm hidden sm:table-cell">Role</TableHead>
-              <TableHead className="whitespace-nowrap px-3 py-2 text-sm text-center hidden md:table-cell">Apartments</TableHead>
+              <TableHead className="whitespace-nowrap px-3 py-2 text-sm text-center hidden md:table-cell">Cars</TableHead>
               <TableHead className="whitespace-nowrap px-3 py-2 text-sm text-center hidden md:table-cell">Rentals</TableHead>
               <TableHead className="whitespace-nowrap px-3 py-2 text-sm text-center hidden md:table-cell">Reviews</TableHead>
               <TableHead>Ban value</TableHead>

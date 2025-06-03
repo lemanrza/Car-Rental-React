@@ -10,7 +10,7 @@ const testimonials = [
     id: 1,
     name: 'Emily Johnson',
     role: 'Business Traveler',
-    avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    avatar: 'https://media.istockphoto.com/id/1299849490/photo/portrait-of-a-black-woman.jpg?s=612x612&w=0&k=20&c=A8rgh5fd9glKs5rvZ3E_5CpxRKYmhl_wcA0iVifuME8=',
     content:
       'The service was impeccable! I needed a reliable car for a business trip, and they delivered beyond my expectations. The car was clean, well-maintained, and the pick-up process was smooth and quick.',
     rating: 5,
@@ -19,7 +19,7 @@ const testimonials = [
     id: 2,
     name: 'Michael Rodriguez',
     role: 'Family Vacation',
-    avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    avatar: 'https://media.istockphoto.com/id/1135381173/photo/portrait-of-a-young-man-outdoors-smiling.jpg?s=2048x2048&w=is&k=20&c=xlSDbsMBOoGhFkFwVAkBqUgYB9Kowo_7xDwfzN4EGiY=',
     content:
       'We rented an SUV for our family vacation and had a wonderful experience. The vehicle was spacious, comfortable, and perfect for our road trip. The staff were friendly and helpful in choosing the right car for our needs.',
     rating: 5,
@@ -28,7 +28,7 @@ const testimonials = [
     id: 3,
     name: 'Sarah Thompson',
     role: 'Weekend Getaway',
-    avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    avatar: 'https://media.istockphoto.com/id/1216152397/photo/portrait-of-female-owner-of-gift-store-standing-in-front-of-shelves-with-cosmetics-and-candles.jpg?s=2048x2048&w=is&k=20&c=pogZqHFwFA0EN522DLNpHSgK3ePFuE4LyKNlQKD8354=',
     content:
       'Rented a convertible for a weekend trip along the coast. The online booking was easy, and the car was exactly what I wanted. Made my trip special! Will definitely use their service again.',
     rating: 4,
@@ -37,7 +37,7 @@ const testimonials = [
     id: 4,
     name: 'David Chen',
     role: 'Corporate Event',
-    avatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    avatar: 'https://media.istockphoto.com/id/1146962927/photo/senior-caucasian-man-portrait.jpg?s=2048x2048&w=is&k=20&c=CgVVhXWT6DArjWfV9153BKdEBWAiS94cGZaw603wEpI=',
     content:
       'Used their service for a corporate event where we needed multiple vehicles. Their team handled everything professionally, from booking to delivery. The fleet was impressive and our executives were very satisfied.',
     rating: 5,
