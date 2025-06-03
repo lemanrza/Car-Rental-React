@@ -37,11 +37,7 @@ const RentalService = {
   delete: async (id: string): Promise<void> => {
     await instance.delete(`${endpoints.rentals}/${id}`);
   },
-  // owner rentals
-  // getOwnerRental: async (ownerId: string | undefined): Promise<Rental[]> => {
-  //   const response = await instance.get(`${endpoints.rentals}?ownerId=${ownerId}`);
-  //   return response.data;
-  // }
+
 };
 
 export default RentalService;

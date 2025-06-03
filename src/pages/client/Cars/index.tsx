@@ -5,12 +5,16 @@ import type { CarType } from "@/types/carType";
 import CarService from "@/services/requests/CarService";
 import CarCard from "@/components/client/CarCard";
 import { Input } from "@/components/ui/input";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const STEP = 30;
 const MIN = 0;
 const MAX = 500;
 
 const CarsSection: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [cars, setCars] = useState<CarType[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,15 +32,38 @@ const CarsSection: React.FC = () => {
     fetchCars();
   }, []);
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const categoryFromUrl = queryParams.get("category");
+    setSelectedCategory(categoryFromUrl);
+  }, [location.search]);
+
+  const handleCategoryChange = (category: string | null) => {
+    setSelectedCategory(category);
+
+    const params = new URLSearchParams(location.search);
+    if (category) {
+      params.set("category", category.toLowerCase());
+    } else {
+      params.delete("category");
+    }
+    navigate({ pathname: location.pathname, search: params.toString() }, { replace: true });
+  };
+
   const categories = Array.from(new Set(cars.map((car) => car.category)));
 
   const filteredCars = cars.filter((car) => {
-    const matchesCategory = selectedCategory ? car.category === selectedCategory : true;
+    const matchesCategory = selectedCategory
+      ? car.category.toLowerCase() === selectedCategory.toLowerCase()
+      : true;
+
     const matchesSearch = car.model.toLowerCase().includes(searchTerm.toLowerCase());
+
     const matchesPrice =
       typeof car.price === "number"
         ? car.price >= priceRange[0] && car.price <= priceRange[1]
         : true;
+
     return matchesCategory && matchesSearch && matchesPrice;
   });
 
@@ -47,46 +74,49 @@ const CarsSection: React.FC = () => {
       </div>
 
       <div className="mb-6 space-y-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-2 flex-grow min-w-[250px] max-w-md">
             <Search className="h-4 w-4 text-gray-500" />
             <Input
               placeholder="Search by model..."
-              className="max-w-sm"
+              className="max-w-[300px]"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center text-gray-700 mr-2">
-              <Filter className="w-4 h-4 mr-1" />
-              <span className="text-sm font-medium">Category:</span>
-            </div>
+          <div className="flex flex-wrap mr-15 items-center gap-2 min-w-[250px]">
+            <Filter className="w-4 h-4 text-gray-700 flex-shrink-0" />
+            <span className="text-sm font-medium text-gray-700 mr-2 whitespace-nowrap">
+              Category:
+            </span>
+
             <button
               className={`px-3 py-1 text-sm rounded-full transition-colors duration-200 ${selectedCategory === null
-                ? "bg-blue-600 text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
-              onClick={() => setSelectedCategory(null)}
+              onClick={() => handleCategoryChange(null)}
             >
               All
             </button>
+
             {categories.map((category) => (
               <button
                 key={category}
-                className={`px-3 py-1 text-sm rounded-full transition-colors duration-200 ${selectedCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                className={`px-3 py-1 text-sm rounded-full transition-colors duration-200 ${selectedCategory?.toLowerCase() === category.toLowerCase()
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
               >
                 {category}
               </button>
             ))}
           </div>
 
-          <div className="max-w-lg">
+
+          <div className="min-w-[150px] max-w-[200px] w-full">
             <label className="block mb-1 text-sm font-medium text-gray-700">
               Price Range: ${priceRange[0]} - ${priceRange[1]}
             </label>
@@ -114,6 +144,7 @@ const CarsSection: React.FC = () => {
             />
           </div>
         </div>
+
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -132,3 +163,4 @@ const CarsSection: React.FC = () => {
 };
 
 export default CarsSection;
+

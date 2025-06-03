@@ -15,10 +15,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { useWishlist } from "@/hooks/useWishlist";
 import type { RootState } from "@/redux/store";
 import UserService from "@/services/requests/UserService";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link } from "react-router";
@@ -28,40 +27,30 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { changePasswordSchema, editProfileSchema } from "@/utils/validations";
 import { setUser } from "@/redux/features/AuthSlice";
+import RentalService from "@/services/requests/RentalService";
+import type { Rental } from "@/types/rentalType";
 const UserProfile = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.auth.user);
 
-  // const [cars, setCars] = useState<CarType[]>([]);
   const [hostRequestLoading, setHostRequestLoading] = useState(false);
+  const [rentals, setRentals] = useState<Rental[]>([])
   const [isBalanceModalOpen, setIsBalanceModalOpen] = useState(false);
   const [amount, setAmount] = useState<number | "">("");
   const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
   const [loadingChangePassword, setLoadingChangePassword] = useState(false);
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchCars = async () => {
-  //     try {
-  //       const data = await CarService.getAll();
-  //       setCars(data);
-  //       setLoading(false);
-  //     } catch (error) {
-  //       console.error("Error fetching cars", error);
-  //     }
-  //   };
-  //   fetchCars();
-  // }, []);
+  useEffect(() => {
+    const fetchRentals = async () => {
+      const data = await RentalService.getAll()
+      setRentals(data)
+    }
+    fetchRentals(
+    )
+  },[])
 
-  const { toggleApartment } = useWishlist(user?.id);
-
-  // const userBookedApartments = useMemo(() => {
-  //   if (!user || !cars.length) return [];
-  //   if (!user.rentals || user.rentals.length === 0) return [];
-
-  //   return user.rentals.map((rental) => cars.find((a) => a.id === rental.carId));
-  // }, [user, cars]);
-
+  const usersRentals=rentals.filter((rental)=>rental.userId===user?.id)
   const handleEditProfileSubmit = async (values: { username: string; email: string; image: string }) => {
     if (!user) return;
 
@@ -137,7 +126,6 @@ const UserProfile = () => {
     }
   };
 
-  console.log(user)
   if (!user) {
     return <p>Loading user data...</p>;
   }
@@ -201,7 +189,7 @@ const UserProfile = () => {
             Add Balance
           </Button>
 
-          {user?.role === "OWNER" && !user.hostRequest && (
+          {user?.role === "CLIENT" && !user.hostRequest && (
             <Button
               className="w-full bg-black text-white hover:bg-black/80"
               onClick={handleBecomeHost}
@@ -220,75 +208,17 @@ const UserProfile = () => {
       </Card>
 
       <div className="w-full max-w-5xl">
-        <Tabs defaultValue="wishlist" className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+        <Tabs defaultValue="rentals" className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
           <TabsList className="mb-6 border-b border-gray-300 dark:border-gray-700">
-            <TabsTrigger value="wishlist" className="px-6 py-2">
-              WishList
-            </TabsTrigger>
-            <TabsTrigger value="bookings" className="px-6 py-2">
+            <TabsTrigger value="rentals" className="px-6 py-2">
               My Bookings
             </TabsTrigger>
           </TabsList>
-
-          <TabsContent value="wishlist" className="text-gray-700 dark:text-gray-300">
-            <div className="grid sm:grid-cols-2 gap-6">
-              {user?.wishlist?.map((car) => (
-                <div
-                  key={car.id}
-                  className="flex w-full max-w-md bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow border dark:border-gray-600"
-                >
-                  <div className="w-1/3 bg-gray-200 flex items-center justify-center">
-                    {car.coverImage ? (
-                      <img
-                        src={car.coverImage}
-                        alt={car.model}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="text-gray-400  dark:text-gray-300 text-4xl">🖼️</div>
-                    )}
-                  </div>
-
-                  <div className="w-2/3 p-4 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{car.model}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{car.year}</p>
-                      <div className="flex items-center gap-1 text-sm text-gray-800 dark:text-gray-300 mt-1">
-                        <span>★</span>
-                        <span>{car.avgRating ?? "N/A"}</span>
-                      </div>
-                      <p className="mt-2 text-base font-bold text-gray-900 dark:text-gray-100">
-                        ${car.price}{" "}
-                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400">/ night</span>
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-2 mt-4">
-                      <Link
-                        to={`/cars/${car.id}`}
-                        className="px-3 py-1 border border-gray-300 dark:border-gray-600 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        View
-                      </Link>
-                      <button
-                        onClick={() => toggleApartment(car.id)}
-                        className="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </TabsContent>
-
-
-          <TabsContent value="bookings" className="text-gray-700 dark:text-gray-300">
+          <TabsContent value="rentals" className="text-gray-700 dark:text-gray-300">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Apartment</TableHead>
+                  <TableHead>Car</TableHead>
                   <TableHead>Dates</TableHead>
                   <TableHead>Total</TableHead>
                   <TableHead className="text-center">Status</TableHead>
@@ -296,21 +226,21 @@ const UserProfile = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {user?.rentals?.length === 0 ? (
+                {usersRentals.length === 0 ? (
                   <TableRow>
                     <TableCell colSpan={7} className="text-center py-8 text-gray-500 dark:text-gray-400">
                       No rentals found.
                     </TableCell>
                   </TableRow>
                 ) : (
-                  user?.rentals?.map((rental) => {
+                  usersRentals.map((rental) => {
 
                     return (
                       <TableRow
                         key={rental.id}
                         className="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                       >
-                        <TableCell>{rental ? rental.car?.model : "Unknown Car"}</TableCell>
+                        <TableCell>{rental ? rental.carId : "Unknown Car"}</TableCell>
                         <TableCell className="font-medium">
                           {new Date(rental.startDate).toLocaleDateString()} <br />{" "}
                           {new Date(rental.endDate).toLocaleDateString()}

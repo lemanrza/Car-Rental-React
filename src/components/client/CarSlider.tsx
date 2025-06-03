@@ -23,7 +23,7 @@ const CarSlider: React.FC<CarGalleryProps> = ({ images }) => {
 
   return (
     <div className="relative">
-      <div className="relative rounded-2xl overflow-hidden aspect-[16/9] bg-gray-100">
+      <div className="relative rounded-2xl mt-15 overflow-hidden aspect-[21/8] bg-gray-100">
         <AnimatePresence mode="wait">
           <motion.img
             key={currentIndex}

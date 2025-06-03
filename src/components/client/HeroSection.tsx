@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
     const [showBrands, setShowBrands] = useState(false);
-
+const navigate=useNavigate()
     useEffect(() => {
         AOS.init({ duration: 400 });
 
@@ -16,7 +17,9 @@ const HeroSection = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
+    const handleCategoryClick = (category: string) => {
+        navigate(`/cars?category=${category.toLowerCase()}`);
+    };
     return (
         <section className="relative min-h-[170vh] overflow-hidden">
             <div className="absolute inset-0 z-0">
@@ -53,17 +56,16 @@ const HeroSection = () => {
                 >
                     <div className="  rounded-xl p-6 grid grid-cols-4 sm:grid-cols-1 gap-4 w-[90%] max-w-[350px]">
                         {[
-                            "BMW",
-                            "Mercedes",
-                            "Audi",
-                            "Porsche",
-                            "Tesla",
-                            "Toyota",
-                            "Lamborghini",
-                            "Ferrari",
+                            "Hybrid",
+                            "Electric",
+                            "Sedan",
+                            "Sports",
+                            "SUV",
+                            "Luxury"
                         ].map((brand, i) => (
                             <button
                                 key={i}
+                                onClick={()=>handleCategoryClick(brand)}
                                 className="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-lg hover:bg-white/30 transition"
                             >
                                 {brand}

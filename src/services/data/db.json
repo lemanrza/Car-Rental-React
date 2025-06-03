@@ -6,17 +6,50 @@
       "email": "john@example.com",
       "password": "john123",
       "role": "CLIENT",
-      "profileImage": "https://example.com/profiles/john.jpg",
-      "balance": 250,
-      "hostRequest": false,
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+      "balance": 350,
+      "hostRequest": true,
       "isBanned": false,
       "createdAt": "2024-12-01T10:00:00Z",
       "cars": [],
-      "wishlist": [
-        "c2"
-      ],
       "rentals": [
-        "r1"
+        {
+          "id": "r1",
+          "userId": "u1",
+          "carId": "c1",
+          "startDate": "2025-06-10T09:00:00Z",
+          "endDate": "2025-06-12T18:00:00Z",
+          "totalPrice": 300,
+          "status": "CONFIRMED",
+          "car": {
+            "id": "c1",
+            "model": "Model 3",
+            "color": "Red",
+            "brand": "Tesla",
+            "category": "Electric",
+            "coverImage": "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "images": [
+              "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+              "https://images.pexels.com/photos/12218196/pexels-photo-12218196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            ],
+            "year": 2023,
+            "avgRating": 4.9,
+            "price": 75,
+            "createdAt": "2023-01-15T00:00:00Z",
+            "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
+            "reviews": [
+              "rev1"
+            ]
+          },
+          "user": {
+            "id": "u1",
+            "username": "john_doe",
+            "email": "john@example.com",
+            "role": "CLIENT",
+            "profileImage": "https://example.com/profiles/john.jpg",
+            "balance": 250
+          }
+        }
       ],
       "reviews": [
         "rev1",
@@ -30,15 +63,12 @@
       "email": "admin@example.com",
       "password": "admin123",
       "role": "ADMIN",
-      "profileImage": "https://cdn-icons-png.flaticon.com/512/1144/1144760.png",
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
       "balance": 1010,
       "hostRequest": false,
       "isBanned": true,
       "createdAt": "2024-11-15T09:30:00Z",
       "cars": [
-        "c1"
-      ],
-      "wishlist": [
         "c1"
       ],
       "rentals": [],
@@ -52,7 +82,7 @@
       "email": "host@example.com",
       "password": "host123",
       "role": "OWNER",
-      "profileImage": "https://example.com/profiles/host.jpg",
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
       "balance": 500,
       "hostRequest": true,
       "isBanned": false,
@@ -61,7 +91,6 @@
         "c1",
         "c2"
       ],
-      "wishlist": [],
       "rentals": [],
       "reviews": [
         "rev3",
@@ -74,14 +103,13 @@
       "email": "lamaner@code.edu.az",
       "password": "Leman123",
       "role": "CLIENT",
-      "profileImage": "",
-      "balance": 0,
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+      "balance": 1000,
       "hostRequest": false,
       "isBanned": false,
       "createdAt": "2025-06-01T15:09:42.237Z",
       "cars": [],
       "rentals": [],
-      "wishlist": [],
       "reviews": [
         "rev2",
         "rev5"
@@ -104,7 +132,7 @@
       ],
       "description": "Experience the future of driving with Tesla Model 3. This all-electric vehicle offers impressive range, acceleration, and advanced autopilot features.",
       "createdAt": "2023-01-15T00:00:00Z",
-      "avgRating": 4.9,
+      "avgRating": 5,
       "ownerId": "u2",
       "owner": {
         "id": "u2",
@@ -132,21 +160,11 @@
           "totalPrice": 300,
           "status": "CONFIRMED"
         }
-      ],
-      "wishlistedBy": [
-        {
-          "id": "u1",
-          "username": "john_doe"
-        },
-        {
-          "id": "u2",
-          "username": "admin_user"
-        }
       ]
     },
     {
       "id": "c2",
-      "model": "Civicee",
+      "model": "Civic",
       "color": "Blue",
       "brand": "Honda",
       "category": "Sedan",
@@ -159,7 +177,7 @@
       ],
       "description": "The reliable Honda Civic combines comfort, fuel efficiency, and modern technology in a stylish package.",
       "createdAt": "2022-11-05T00:00:00Z",
-      "avgRating": 4.7,
+      "avgRating": 3,
       "ownerId": "u3",
       "owner": {
         "id": "u3",
@@ -185,8 +203,7 @@
           "createdAt": "2025-06-02T15:40:00Z"
         }
       ],
-      "rentals": [],
-      "wishlistedBy": []
+      "rentals": []
     },
     {
       "id": "c3",
@@ -203,7 +220,7 @@
       ],
       "description": "Feel the power of American muscle with the Ford Mustang GT. With its V8 engine and iconic design, it delivers an exhilarating driving experience.",
       "createdAt": "2023-02-20T00:00:00Z",
-      "avgRating": 4.8,
+      "avgRating": 5,
       "ownerId": "u3",
       "owner": {
         "id": "u3",
@@ -221,8 +238,7 @@
           "createdAt": "2025-06-02T10:12:00Z"
         }
       ],
-      "rentals": [],
-      "wishlistedBy": []
+      "rentals": []
     },
     {
       "id": "c4",
@@ -239,7 +255,7 @@
       ],
       "description": "Luxury meets performance in the BMW X5. This premium SUV offers a spacious interior, cutting-edge technology, and the renowned BMW driving dynamics.",
       "createdAt": "2022-10-12T00:00:00Z",
-      "avgRating": 4.6,
+      "avgRating": 4,
       "ownerId": "51e4",
       "owner": {
         "id": "51e4",
@@ -257,8 +273,7 @@
           "createdAt": "2025-06-02T13:00:00Z"
         }
       ],
-      "rentals": [],
-      "wishlistedBy": []
+      "rentals": []
     },
     {
       "id": "c5",
@@ -275,7 +290,7 @@
       ],
       "description": "The Mercedes-Benz A-Class brings luxury to the compact segment with its elegant design, premium materials, and advanced MBUX infotainment system.",
       "createdAt": "2023-03-05T00:00:00Z",
-      "avgRating": 4.5,
+      "avgRating": 3,
       "ownerId": "u1",
       "owner": {
         "id": "u1",
@@ -293,8 +308,7 @@
           "createdAt": "2025-06-02T11:45:00Z"
         }
       ],
-      "rentals": [],
-      "wishlistedBy": []
+      "rentals": []
     },
     {
       "id": "c6",
@@ -311,7 +325,7 @@
       ],
       "description": "The iconic Toyota Prius combines hybrid efficiency with practical design. Enjoy exceptional fuel economy and reduced emissions in this environmentally-friendly vehicle.",
       "createdAt": "2022-09-18T00:00:00Z",
-      "avgRating": 4.4,
+      "avgRating": 4.5,
       "ownerId": "u2",
       "owner": {
         "id": "u2",
@@ -337,8 +351,7 @@
           "createdAt": "2025-06-02T16:05:00Z"
         }
       ],
-      "rentals": [],
-      "wishlistedBy": []
+      "rentals": []
     }
   ],
   "rentals": [
@@ -378,6 +391,71 @@
         "profileImage": "https://example.com/profiles/john.jpg",
         "balance": 250
       }
+    },
+    {
+      "id": "7f6e",
+      "userId": "u1",
+      "carId": "c4",
+      "startDate": "2025-06-03T03:06:08.713Z",
+      "endDate": "2025-06-05T03:06:08.713Z",
+      "totalPrice": 190,
+      "status": "CONFIRMED",
+      "car": {
+        "id": "c4",
+        "model": "X5",
+        "color": "Black",
+        "brand": "BMW",
+        "category": "SUV",
+        "coverImage": "https://images.pexels.com/photos/892522/pexels-photo-892522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "year": 2022,
+        "avgRating": 4,
+        "price": 95
+      },
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250
+      }
+    },
+    {
+      "id": "af64",
+      "userId": "u1",
+      "carId": "c6",
+      "startDate": "2025-06-03T03:16:54.311Z",
+      "endDate": "2025-06-05T03:16:54.311Z",
+      "totalPrice": 110,
+      "status": "CONFIRMED",
+      "car": {
+        "id": "c6",
+        "model": "Prius",
+        "color": "Green",
+        "brand": "Toyota",
+        "category": "Hybrid",
+        "coverImage": "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "year": 2022,
+        "avgRating": 4.5,
+        "price": 55
+      },
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250
+      }
+    },
+    {
+      "id": "5cb5",
+      "userId": "51e4",
+      "carId": "c6",
+      "startDate": "2025-06-03T03:48:30.926Z",
+      "endDate": "2025-06-05T03:48:30.926Z",
+      "totalPrice": 110,
+      "status": "PENDING"
     }
   ],
   "reviews": [
@@ -387,7 +465,23 @@
       "carId": "c1",
       "rating": 5,
       "comment": "Absolutely loved the Tesla! Smooth and futuristic ride.",
-      "createdAt": "2025-06-01T14:20:00Z"
+      "createdAt": "2025-06-01T14:20:00Z",
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "rentals": [
+          "r1"
+        ]
+      }
     },
     {
       "id": "rev2",
@@ -395,7 +489,21 @@
       "carId": "c2",
       "rating": 4,
       "comment": "Very economical and comfy for the price. Would use again.",
-      "createdAt": "2025-06-01T17:35:00Z"
+      "createdAt": "2025-06-01T17:35:00Z",
+      "user": {
+        "id": "51e4",
+        "username": "l_rzali",
+        "email": "lamaner@code.edu.az",
+        "password": "Leman123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 0,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2025-06-01T15:09:42.237Z",
+        "cars": [],
+        "rentals": []
+      }
     },
     {
       "id": "rev3",
@@ -403,7 +511,24 @@
       "carId": "c3",
       "rating": 5,
       "comment": "That Mustang sound is unbeatable. Pure muscle car joy.",
-      "createdAt": "2025-06-02T10:12:00Z"
+      "createdAt": "2025-06-02T10:12:00Z",
+      "user": {
+        "id": "u3",
+        "username": "car_host",
+        "email": "host@example.com",
+        "password": "host123",
+        "role": "OWNER",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 500,
+        "hostRequest": true,
+        "isBanned": false,
+        "createdAt": "2024-10-20T08:00:00Z",
+        "cars": [
+          "c1",
+          "c2"
+        ],
+        "rentals": []
+      }
     },
     {
       "id": "rev4",
@@ -411,7 +536,23 @@
       "carId": "c5",
       "rating": 3,
       "comment": "Luxury feel, but the drive wasn’t as smooth as expected.",
-      "createdAt": "2025-06-02T11:45:00Z"
+      "createdAt": "2025-06-02T11:45:00Z",
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "rentals": [
+          "r1"
+        ]
+      }
     },
     {
       "id": "rev5",
@@ -419,7 +560,21 @@
       "carId": "c4",
       "rating": 4,
       "comment": "Spacious and perfect for family road trips. Clean interior.",
-      "createdAt": "2025-06-02T13:00:00Z"
+      "createdAt": "2025-06-02T13:00:00Z",
+      "user": {
+        "id": "51e4",
+        "username": "l_rzali",
+        "email": "lamaner@code.edu.az",
+        "password": "Leman123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 0,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2025-06-01T15:09:42.237Z",
+        "cars": [],
+        "rentals": []
+      }
     },
     {
       "id": "rev6",
@@ -427,7 +582,23 @@
       "carId": "c6",
       "rating": 5,
       "comment": "Silent, smooth, and super fuel-efficient. Loved the Prius!",
-      "createdAt": "2025-06-02T14:22:00Z"
+      "createdAt": "2025-06-02T14:22:00Z",
+      "user": {
+        "id": "u2",
+        "username": "admin_user",
+        "email": "admin@example.com",
+        "password": "admin123",
+        "role": "ADMIN",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 1010,
+        "hostRequest": false,
+        "isBanned": true,
+        "createdAt": "2024-11-15T09:30:00Z",
+        "cars": [
+          "c1"
+        ],
+        "rentals": []
+      }
     },
     {
       "id": "rev7",
@@ -435,7 +606,24 @@
       "carId": "c2",
       "rating": 2,
       "comment": "Car was fine, but pickup process was slow and confusing.",
-      "createdAt": "2025-06-02T15:40:00Z"
+      "createdAt": "2025-06-02T15:40:00Z",
+      "user": {
+        "id": "u3",
+        "username": "car_host",
+        "email": "host@example.com",
+        "password": "host123",
+        "role": "OWNER",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 500,
+        "hostRequest": true,
+        "isBanned": false,
+        "createdAt": "2024-10-20T08:00:00Z",
+        "cars": [
+          "c1",
+          "c2"
+        ],
+        "rentals": []
+      }
     },
     {
       "id": "rev8",
@@ -443,7 +631,110 @@
       "carId": "c6",
       "rating": 4,
       "comment": "Eco-friendly and smart features impressed me.",
-      "createdAt": "2025-06-02T16:05:00Z"
+      "createdAt": "2025-06-02T16:05:00Z",
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "rentals": [
+          "r1"
+        ]
+      }
+    },
+    {
+      "id": "f890",
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "rentals": [
+          "r1"
+        ],
+        "reviews": [
+          "rev1",
+          "rev4",
+          "rev8"
+        ]
+      },
+      "userId": "u1",
+      "carId": "c2",
+      "rating": 3,
+      "comment": "that's okay",
+      "createdAt": "2025-06-03T02:03:54.666Z"
+    },
+    {
+      "id": "bea6",
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "rentals": [
+          "r1"
+        ],
+        "reviews": [
+          "rev1",
+          "rev4",
+          "rev8"
+        ]
+      },
+      "userId": "u1",
+      "carId": "c2",
+      "rating": 1,
+      "comment": "12",
+      "createdAt": "2025-06-03T02:06:36.616Z"
+    },
+    {
+      "id": "22c0",
+      "user": {
+        "id": "u1",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "john123",
+        "role": "CLIENT",
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "balance": 250,
+        "hostRequest": false,
+        "isBanned": false,
+        "createdAt": "2024-12-01T10:00:00Z",
+        "cars": [],
+        "rentals": [
+          "r1"
+        ],
+        "reviews": [
+          "rev1",
+          "rev4",
+          "rev8"
+        ]
+      },
+      "userId": "u1",
+      "carId": "c2",
+      "rating": 5,
+      "comment": "besttt",
+      "createdAt": "2025-06-03T02:11:05.094Z"
     }
   ],
   "contacts": [

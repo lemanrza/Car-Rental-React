@@ -1,3 +1,5 @@
+import type { User } from "./authType";
+
 export type Review = {
   id: string;
   userId: string;
@@ -5,4 +7,5 @@ export type Review = {
   rating: number;
   comment: string;
   createdAt: string;
+  user: User
 };
