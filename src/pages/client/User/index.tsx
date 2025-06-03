@@ -29,6 +29,7 @@ import { changePasswordSchema, editProfileSchema } from "@/utils/validations";
 import { setUser } from "@/redux/features/AuthSlice";
 import RentalService from "@/services/requests/RentalService";
 import type { Rental } from "@/types/rentalType";
+import { formatEnumLabel } from "@/utils/formatEnumLabel";
 const UserProfile = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.auth.user);
@@ -48,9 +49,9 @@ const UserProfile = () => {
     }
     fetchRentals(
     )
-  },[])
+  }, [])
 
-  const usersRentals=rentals.filter((rental)=>rental.userId===user?.id)
+  const usersRentals = rentals.filter((rental) => rental.userId === user?.id)
   const handleEditProfileSubmit = async (values: { username: string; email: string; image: string }) => {
     if (!user) return;
 
@@ -145,7 +146,7 @@ const UserProfile = () => {
           </Avatar>
           <div className="text-center">
             <h2 className="text-2xl font-semibold">{user?.username}</h2>
-            <p className="text-sm text-muted-foreground dark:text-gray-400">{user?.role}</p>
+            <p className="text-sm text-muted-foreground dark:text-gray-400">{formatEnumLabel(user?.role)}</p>
           </div>
         </div>
 
@@ -249,7 +250,7 @@ const UserProfile = () => {
                         <TableCell
                           className="text-center"
                         >
-                          {rental.status}
+                          {formatEnumLabel(rental.status)}
                         </TableCell>
 
                         <TableCell className="text-center space-x-2">

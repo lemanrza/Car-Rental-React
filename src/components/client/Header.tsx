@@ -12,6 +12,7 @@ import { useTheme } from "../common/theme-provider";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/redux/store";
+import { formatEnumLabel } from "@/utils/formatEnumLabel";
 
 const Header = () => {
   const user = useSelector((state: RootState) => state.auth.user);
@@ -114,14 +115,14 @@ const Header = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-60">
                   <div className="flex flex-col ml-3">
-                    <p className="font-semibold text-sm">{user.role} User</p>
+                    <p className="font-semibold text-sm">{formatEnumLabel(user.role)} User</p>
                     <span className="text-sm">{user.email}</span>
                   </div>
                   <Separator className="mt-3" />
                   {(user.role === "ADMIN" || user.role === "OWNER") && (
                     <DropdownMenuItem asChild>
                       <Link to={`/${user.role.toLowerCase()}`}>
-                        {user.role} Dashboard
+                        {formatEnumLabel(user.role)} Dashboard
                       </Link>
                     </DropdownMenuItem>
                   )}
