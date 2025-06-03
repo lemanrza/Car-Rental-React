@@ -358,7 +358,7 @@ const CarDetail = () => {
       startDate: startDate.toISOString(),
       endDate: endDate.toISOString(),
       totalPrice,
-      status: "PENDING",
+      status: "PENDING" as const,
     };
 
     try {
